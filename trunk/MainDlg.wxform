@@ -1,0 +1,2226 @@
+object frmNewForm: TfrmNewForm
+  Left = 8
+  Top = 8
+  Width = 600
+  Height = 710
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'avrdude gui v0.2.0'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  PopupMenu = MainForm.DesignerPopup
+  Visible = True
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnKeyDown = FormKeyDown
+  OnResize = NewFormResize
+  Wx_ICON.Data = {
+    07544269746D617036100000424D361000000000000036000000280000002000
+    0000200000000100200000000000001000000000000000000000000000000000
+    0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0000000000FFFF
+    FF00FFFFFF0000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0000000000FFFFFF0000000000FFFF
+    FF00FFFFFF0000000000FFFFFF0000000000FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF0000000000FFFFFF0000000000FFFFFF00000000000000
+    00000000000000000000FFFFFF0000000000FFFFFF0000000000FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF0000000000FFFFFF0000000000FFFFFF000000000000000000808080008080
+    800000000000000000000000000000000000FFFFFF0000000000FFFFFF000000
+    0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0000000000FFFF
+    FF0000000000FFFFFF0000000000000000008080800080808000808080008080
+    8000000000000000000000000000000000000000000000000000FFFFFF000000
+    0000FFFFFF0000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0000000000FFFFFF0000000000FFFF
+    FF00000000000000000080808000808080008080800080808000808080008080
+    8000000000000000000000000000000000000000000000000000000000000000
+    0000FFFFFF0000000000FFFFFF0000000000FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF0000000000FFFFFF0000000000FFFFFF00000000000000
+    0000808080008080800080808000808080008080800080808000808080008080
+    8000808080008080800000000000000000000000000000000000000000000000
+    00000000000000000000FFFFFF0000000000FFFFFF0000000000FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF0000000000FFFFFF000000000000000000808080008080
+    8000808080008080800080808000808080008080800080808000808080008080
+    8000808080008080800080808000808080000000000000000000000000000000
+    000000000000000000000000000000000000FFFFFF0000000000FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF0000000000000000008080800080808000808080008080
+    80008080800080808000C0C0C000C0C0C0008080800080808000808080008080
+    8000808080008080800080808000808080008080800080808000000000000000
+    0000000000000000000000000000000000000000000000000000FFFFFF00FFFF
+    FF00FFFFFF000000000080808000808080008080800080808000808080008080
+    8000C0C0C000C0C0C000C0C0C000C0C0C0008080800080808000808080008080
+    8000808080008080800080808000808080008080800080808000808080008080
+    800000000000000000000000000000000000000000000000000000000000FFFF
+    FF00FFFFFF000000000080808000808080008080800080808000C0C0C000C0C0
+    C000C0C0C000C0C0C000C0C0C000C0C0C0008080800080808000808080008080
+    8000808080008080800080808000808080008080800080808000808080008080
+    800080808000808080000000000000000000000000000000000000000000FFFF
+    FF00FFFFFF00000000008080800080808000C0C0C000C0C0C000C0C0C000C0C0
+    C000C0C0C000C0C0C000C0C0C000C0C0C0008080800080808000808080008080
+    8000808080008080800080808000808080008080800080808000808080008080
+    800080808000808080008080800080808000000000000000000000000000FFFF
+    FF00FFFFFF0000000000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+    C000C0C0C000C0C0C000C0C0C000C0C0C0008080800080808000C0C0C000C0C0
+    C000808080008080800080808000808080008080800080808000808080008080
+    800080808000808080008080800080808000808080008080800000000000FFFF
+    FF00FFFFFF0000000000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+    C000C0C0C000C0C0C000C0C0C000C0C0C0008080800080808000808080008080
+    8000C0C0C000C0C0C00080808000808080008080800080808000808080008080
+    800080808000808080008080800080808000808080008080800000000000FFFF
+    FF00FFFFFF00FFFFFF000000000000000000C0C0C000C0C0C000C0C0C000C0C0
+    C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000808080008080
+    80008080800080808000C0C0C000C0C0C0008080800080808000808080008080
+    8000808080008080800080808000808080000000000000000000FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000000000000000C0C0C000C0C0
+    C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C00080808000C0C0C000C0C0
+    C000808080008080800080808000808080008080800080808000808080008080
+    800080808000808080000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000000000
+    0000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C00080808000808080008080
+    8000C0C0C000C0C0C00080808000808080008080800080808000808080008080
+    80000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF000000000000000000C0C0C000C0C0C000C0C0C00080808000808080008080
+    8000808080008080800080808000808080008080800080808000000000000000
+    0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF000000000000000000C0C0C00080808000808080008080
+    8000808080008080800080808000808080000000000000000000FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000000000000000808080008080
+    800080808000808080000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000000000
+    00000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00}
+  Wx_Name = 'MainDlg'
+  Wx_IDName = 'ID_DIALOG1'
+  Wx_IDValue = 1000
+  Wx_Class = 'wxDialog'
+  Wx_Center = True
+  Wx_Hidden = False
+  Wx_ToolTips = '0'
+  Wx_GeneralStyle = []
+  Wx_DialogStyle = [wxCAPTION, wxSYSTEM_MENU, wxMINIMIZE_BOX, wxCLOSE_BOX]
+  EVT_INIT_DIALOG = 'MainDlgInit'
+  EVT_CLOSE = 'MainDlgClose'
+  PixelsPerInch = 96
+  TextHeight = 13
+  object WxStaticText1: TWxStaticText
+    Left = 12
+    Top = 5
+    Width = 102
+    Height = 17
+    Caption = 'Location of avrdude:'
+    TabOrder = 0
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxStaticText'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_WXSTATICTEXT1'
+    Wx_IDValue = 1001
+    Wx_LabelStyle = []
+    Wx_StrechFactor = 0
+  end
+  object edtAvrdude: TWxEdit
+    Left = 12
+    Top = 22
+    Width = 433
+    Height = 21
+    TabOrder = 1
+    Text = 'avrdude'
+    EVT_TEXT = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxTextCtrl'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_EditStyle = []
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_EDTAVRDUDE'
+    Wx_IDValue = 1002
+    Wx_StrechFactor = 0
+  end
+  object btnOpenAvrdudeFile: TWxButton
+    Left = 444
+    Top = 21
+    Width = 20
+    Height = 23
+    Caption = '...'
+    TabOrder = 2
+    EVT_BUTTON = 'SelectAvrdude'
+    Wx_BKColor = clBlack
+    Wx_ButtonStyle = []
+    Wx_Class = 'wxButton'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_Default = False
+    Wx_EventList.Strings = (
+      'EVT_BUTTON:OnClick'
+      'EVT_UPDATE_UI:OnUpdateUI')
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_BTNOPENAVRDUDEFILE'
+    Wx_IDValue = 1003
+    Wx_StrechFactor = 0
+  end
+  object edtConfFile: TWxEdit
+    Left = 12
+    Top = 68
+    Width = 434
+    Height = 21
+    TabOrder = 4
+    EVT_TEXT = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxTextCtrl'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_EditStyle = []
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_WXEDIT1'
+    Wx_IDValue = 1008
+    Wx_StrechFactor = 0
+  end
+  object btnOpenConfFile: TWxButton
+    Left = 445
+    Top = 67
+    Width = 20
+    Height = 23
+    Caption = '...'
+    TabOrder = 5
+    EVT_BUTTON = 'SelectConfFile'
+    Wx_BKColor = clBlack
+    Wx_ButtonStyle = []
+    Wx_Class = 'wxButton'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_Default = False
+    Wx_EventList.Strings = (
+      'EVT_BUTTON:OnClick'
+      'EVT_UPDATE_UI:OnUpdateUI')
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_WXBUTTON1'
+    Wx_IDValue = 1009
+    Wx_StrechFactor = 0
+  end
+  object WxStaticText2: TWxStaticText
+    Left = 12
+    Top = 51
+    Width = 197
+    Height = 17
+    Caption = '-C Location of alternate configuration file:'
+    TabOrder = 3
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxStaticText'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_WXSTATICTEXT2'
+    Wx_IDValue = 1007
+    Wx_LabelStyle = []
+    Wx_StrechFactor = 0
+  end
+  object cmbDevice: TWxComboBox
+    Left = 12
+    Top = 113
+    Width = 91
+    Height = 21
+    ItemHeight = 13
+    TabOrder = 6
+    Items.Strings = (
+      'AT90S1200'
+      'AT90S2313'
+      'AT90S2333'
+      'AT90S2343'
+      'AT90S4414'
+      'AT90S4433'
+      'AT90S4434'
+      'AT90S8515'
+      'AT90S8535'
+      'ATmega103'
+      'ATmega128'
+      'ATmega16'
+      'ATmega161'
+      'ATmega162'
+      'ATmega163'
+      'ATmega169'
+      'ATmega32'
+      'ATmega48'
+      'ATmega64'
+      'ATmega8'
+      'ATmega8515'
+      'ATmega8535'
+      'ATmega88'
+      'ATtiny12'
+      'ATtiny13'
+      'ATtiny15'
+      'ATtiny2313'
+      'ATtiny26')
+    EVT_TEXT = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxComboBox'
+    Wx_ComboboxStyle = []
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CMBDEVICE'
+    Wx_IDValue = 1010
+    Wx_StrechFactor = 0
+  end
+  object WxStaticText3: TWxStaticText
+    Left = 12
+    Top = 96
+    Width = 53
+    Height = 17
+    Caption = '-p Device:'
+    TabOrder = 7
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxStaticText'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_WXSTATICTEXT3'
+    Wx_IDValue = 1011
+    Wx_LabelStyle = []
+    Wx_StrechFactor = 0
+  end
+  object WxStaticText4: TWxStaticText
+    Left = 132
+    Top = 96
+    Width = 75
+    Height = 17
+    Caption = '-c Programmer:'
+    TabOrder = 8
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxStaticText'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_WXSTATICTEXT4'
+    Wx_IDValue = 1012
+    Wx_LabelStyle = []
+    Wx_StrechFactor = 0
+  end
+  object WxStaticText5: TWxStaticText
+    Left = 252
+    Top = 96
+    Width = 39
+    Height = 17
+    Caption = '-P Port:'
+    TabOrder = 9
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxStaticText'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_WXSTATICTEXT5'
+    Wx_IDValue = 1013
+    Wx_LabelStyle = []
+    Wx_StrechFactor = 0
+  end
+  object cmbProgrammer: TWxComboBox
+    Left = 132
+    Top = 113
+    Width = 91
+    Height = 21
+    ItemHeight = 13
+    TabOrder = 10
+    Items.Strings = (
+      'abcmini'
+      'alf'
+      'avr910'
+      'avrisp'
+      'bascom'
+      'bsd'
+      'butterfly'
+      'dt006'
+      'futurlec'
+      'pavr'
+      'picoweb'
+      'pony-stk200'
+      'sp12'
+      'stk200'
+      'stk500'
+      'usbasp')
+    EVT_TEXT = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxComboBox'
+    Wx_ComboboxStyle = []
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CMBPROGRAMMER'
+    Wx_IDValue = 1016
+    Wx_StrechFactor = 0
+  end
+  object cmbPort: TWxComboBox
+    Left = 253
+    Top = 113
+    Width = 91
+    Height = 21
+    ItemHeight = 13
+    TabOrder = 11
+    Items.Strings = (
+      'lpt1'
+      'lpt2'
+      'lpt3'
+      'com1'
+      'com2'
+      'com3'
+      'com4'
+      'com5'
+      'com6'
+      'com7'
+      'com8')
+    EVT_TEXT = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxComboBox'
+    Wx_ComboboxStyle = []
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CMBPORT'
+    Wx_IDValue = 1017
+    Wx_StrechFactor = 0
+  end
+  object WxStaticBox1: TWxStaticBox
+    Left = 4
+    Top = 142
+    Width = 584
+    Height = 67
+    Caption = 'Flash'
+    TabOrder = 12
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxStaticBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_IDName = 'ID_WXSTATICBOX1'
+    Wx_IDValue = 1018
+    Wx_StrechFactor = 0
+  end
+  object edtFlashFile: TWxEdit
+    Left = 12
+    Top = 179
+    Width = 434
+    Height = 21
+    TabOrder = 13
+    Text = 'flash.hex'
+    EVT_TEXT = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxTextCtrl'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_EditStyle = []
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_EDTFLASHFILE'
+    Wx_IDValue = 1019
+    Wx_StrechFactor = 0
+  end
+  object chkWriteFlash: TWxCheckBox
+    Left = 12
+    Top = 156
+    Width = 57
+    Height = 23
+    Caption = 'Write'
+    TabOrder = 14
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CHKWRITEFLASH'
+    Wx_IDValue = 1021
+    Wx_StrechFactor = 0
+  end
+  object chkReadFlash: TWxCheckBox
+    Left = 132
+    Top = 156
+    Width = 57
+    Height = 23
+    Caption = 'Read'
+    TabOrder = 15
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CHKREADFLASH'
+    Wx_IDValue = 1022
+    Wx_StrechFactor = 0
+  end
+  object chkVerifyFlash: TWxCheckBox
+    Left = 252
+    Top = 156
+    Width = 57
+    Height = 23
+    Caption = 'Verify'
+    TabOrder = 16
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CHKVERIFYFLASH'
+    Wx_IDValue = 1023
+    Wx_StrechFactor = 0
+  end
+  object btnOpenFlashFile: TWxButton
+    Left = 445
+    Top = 178
+    Width = 20
+    Height = 23
+    Caption = '...'
+    TabOrder = 17
+    EVT_BUTTON = 'SelectFlash'
+    Wx_BKColor = clBlack
+    Wx_ButtonStyle = []
+    Wx_Class = 'wxButton'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_Default = False
+    Wx_EventList.Strings = (
+      'EVT_BUTTON:OnClick'
+      'EVT_UPDATE_UI:OnUpdateUI')
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_BTNOPENFLASHFILE'
+    Wx_IDValue = 1024
+    Wx_StrechFactor = 0
+  end
+  object cmbFlashFormat: TWxComboBox
+    Left = 478
+    Top = 179
+    Width = 102
+    Height = 21
+    ItemHeight = 13
+    TabOrder = 18
+    Items.Strings = (
+      'Autodetect'
+      'Intel Hex'
+      'Motorola'
+      'Raw binary'
+      'Immediate mode')
+    EVT_TEXT = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxComboBox'
+    Wx_ComboboxStyle = []
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CMBFLASHFORMAT'
+    Wx_IDValue = 1025
+    Wx_StrechFactor = 0
+  end
+  object WxStaticText6: TWxStaticText
+    Left = 480
+    Top = 161
+    Width = 39
+    Height = 17
+    Caption = 'Format:'
+    TabOrder = 19
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxStaticText'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_WXSTATICTEXT6'
+    Wx_IDValue = 1026
+    Wx_LabelStyle = []
+    Wx_StrechFactor = 0
+  end
+  object grpGiveio: TWxStaticBox
+    Left = 474
+    Top = 17
+    Width = 114
+    Height = 116
+    Caption = 'GiveIO Driver'
+    TabOrder = 20
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxStaticBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_IDName = 'ID_GRPGIVEIO'
+    Wx_IDValue = 1029
+    Wx_StrechFactor = 0
+  end
+  object btnInstallGiveio: TWxButton
+    Left = 495
+    Top = 40
+    Width = 75
+    Height = 23
+    Caption = 'Install'
+    TabOrder = 21
+    EVT_BUTTON = 'InstallGiveio'
+    Wx_BKColor = clBlack
+    Wx_ButtonStyle = []
+    Wx_Class = 'wxButton'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_Default = False
+    Wx_EventList.Strings = (
+      'EVT_BUTTON:OnClick'
+      'EVT_UPDATE_UI:OnUpdateUI')
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_BTNINSTALLGIVEIO'
+    Wx_IDValue = 1032
+    Wx_StrechFactor = 0
+  end
+  object btnRemoveGiveio: TWxButton
+    Left = 495
+    Top = 67
+    Width = 75
+    Height = 23
+    Caption = 'Remove'
+    TabOrder = 22
+    EVT_BUTTON = 'RemoveGiveio'
+    Wx_BKColor = clBlack
+    Wx_ButtonStyle = []
+    Wx_Class = 'wxButton'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_Default = False
+    Wx_EventList.Strings = (
+      'EVT_BUTTON:OnClick'
+      'EVT_UPDATE_UI:OnUpdateUI')
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_BTNREMOVEGIVEIO'
+    Wx_IDValue = 1033
+    Wx_StrechFactor = 0
+  end
+  object btnStatusGiveio: TWxButton
+    Left = 495
+    Top = 94
+    Width = 75
+    Height = 23
+    Caption = 'Status'
+    TabOrder = 23
+    EVT_BUTTON = 'StatusGiveio'
+    Wx_BKColor = clBlack
+    Wx_ButtonStyle = []
+    Wx_Class = 'wxButton'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_Default = False
+    Wx_EventList.Strings = (
+      'EVT_BUTTON:OnClick'
+      'EVT_UPDATE_UI:OnUpdateUI')
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_BTNSTATUSGIVEIO'
+    Wx_IDValue = 1034
+    Wx_StrechFactor = 0
+  end
+  object WxStaticBox3: TWxStaticBox
+    Left = 4
+    Top = 217
+    Width = 584
+    Height = 67
+    Caption = 'EEPROM'
+    TabOrder = 24
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxStaticBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_IDName = 'ID_WXSTATICBOX3'
+    Wx_IDValue = 1063
+    Wx_StrechFactor = 0
+  end
+  object edtEepromFile: TWxEdit
+    Left = 12
+    Top = 254
+    Width = 434
+    Height = 21
+    TabOrder = 26
+    Text = 'eeprom.hex'
+    EVT_TEXT = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxTextCtrl'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_EditStyle = []
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_WXEDIT2'
+    Wx_IDValue = 1088
+    Wx_StrechFactor = 0
+  end
+  object chkReadEeprom: TWxCheckBox
+    Left = 132
+    Top = 231
+    Width = 57
+    Height = 23
+    Caption = 'Read'
+    TabOrder = 27
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_WXCHECKBOX2'
+    Wx_IDValue = 1089
+    Wx_StrechFactor = 0
+  end
+  object chkVerifyEeprom: TWxCheckBox
+    Left = 252
+    Top = 231
+    Width = 57
+    Height = 23
+    Caption = 'Verify'
+    TabOrder = 28
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_WXCHECKBOX3'
+    Wx_IDValue = 1090
+    Wx_StrechFactor = 0
+  end
+  object btnOpenEepromFile: TWxButton
+    Left = 445
+    Top = 253
+    Width = 20
+    Height = 23
+    Caption = '...'
+    TabOrder = 29
+    EVT_BUTTON = 'SelectEeprom'
+    Wx_BKColor = clBlack
+    Wx_ButtonStyle = []
+    Wx_Class = 'wxButton'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_Default = False
+    Wx_EventList.Strings = (
+      'EVT_BUTTON:OnClick'
+      'EVT_UPDATE_UI:OnUpdateUI')
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_WXBUTTON2'
+    Wx_IDValue = 1091
+    Wx_StrechFactor = 0
+  end
+  object cmbEepromFormat: TWxComboBox
+    Left = 480
+    Top = 254
+    Width = 102
+    Height = 21
+    ItemHeight = 13
+    TabOrder = 30
+    Items.Strings = (
+      'Autodetect'
+      'Intel Hex'
+      'Motorola'
+      'Raw binary'
+      'Immediate mode')
+    EVT_TEXT = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxComboBox'
+    Wx_ComboboxStyle = []
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_WXCOMBOBOX1'
+    Wx_IDValue = 1092
+    Wx_StrechFactor = 0
+  end
+  object WxStaticText7: TWxStaticText
+    Left = 480
+    Top = 236
+    Width = 39
+    Height = 17
+    Caption = 'Format:'
+    TabOrder = 31
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxStaticText'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_WXSTATICTEXT7'
+    Wx_IDValue = 1093
+    Wx_LabelStyle = []
+    Wx_StrechFactor = 0
+  end
+  object chkWriteEeprom: TWxCheckBox
+    Left = 12
+    Top = 231
+    Width = 57
+    Height = 23
+    Caption = 'Write'
+    TabOrder = 25
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CHKWRITEEEPROM'
+    Wx_IDValue = 1087
+    Wx_StrechFactor = 0
+  end
+  object WxStaticBox4: TWxStaticBox
+    Left = 4
+    Top = 290
+    Width = 90
+    Height = 79
+    Caption = 'Low Fuse'
+    TabOrder = 32
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxStaticBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_IDName = 'ID_WXSTATICBOX4'
+    Wx_IDValue = 1094
+    Wx_StrechFactor = 0
+  end
+  object chkWriteLfuse: TWxCheckBox
+    Left = 12
+    Top = 307
+    Width = 55
+    Height = 17
+    Caption = 'Write'
+    TabOrder = 33
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CHKWRITELFUSE'
+    Wx_IDValue = 1095
+    Wx_StrechFactor = 0
+  end
+  object chkReadLfuse: TWxCheckBox
+    Left = 12
+    Top = 323
+    Width = 55
+    Height = 17
+    Caption = 'Read'
+    TabOrder = 34
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CHKREADLFUSE'
+    Wx_IDValue = 1096
+    Wx_StrechFactor = 0
+  end
+  object edtLfuse: TWxEdit
+    Left = 46
+    Top = 341
+    Width = 21
+    Height = 21
+    TabOrder = 35
+    Text = '00'
+    EVT_TEXT = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxTextCtrl'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_EditStyle = []
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_EDTLFUSE'
+    Wx_IDValue = 1097
+    Wx_StrechFactor = 0
+  end
+  object WxStaticText8: TWxStaticText
+    Left = 31
+    Top = 344
+    Width = 15
+    Height = 17
+    Caption = '0x'
+    TabOrder = 36
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxStaticText'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_WXSTATICTEXT8'
+    Wx_IDValue = 1098
+    Wx_LabelStyle = []
+    Wx_StrechFactor = 0
+  end
+  object WxStaticBox5: TWxStaticBox
+    Left = 103
+    Top = 290
+    Width = 90
+    Height = 79
+    Caption = 'High Fuse'
+    TabOrder = 37
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxStaticBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_IDName = 'ID_WXSTATICBOX5'
+    Wx_IDValue = 1099
+    Wx_StrechFactor = 0
+  end
+  object WxStaticBox7: TWxStaticBox
+    Left = 301
+    Top = 290
+    Width = 90
+    Height = 79
+    Caption = 'Extended Fuse'
+    TabOrder = 38
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxStaticBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_IDName = 'ID_WXSTATICBOX7'
+    Wx_IDValue = 1101
+    Wx_StrechFactor = 0
+  end
+  object WxStaticBox8: TWxStaticBox
+    Left = 400
+    Top = 290
+    Width = 90
+    Height = 79
+    Caption = 'Calibration'
+    TabOrder = 39
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxStaticBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_IDName = 'ID_WXSTATICBOX8'
+    Wx_IDValue = 1102
+    Wx_StrechFactor = 0
+  end
+  object WxStaticBox9: TWxStaticBox
+    Left = 498
+    Top = 290
+    Width = 90
+    Height = 79
+    Caption = 'Signature'
+    TabOrder = 40
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxStaticBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_IDName = 'ID_WXSTATICBOX9'
+    Wx_IDValue = 1103
+    Wx_StrechFactor = 0
+  end
+  object WxStaticBox6: TWxStaticBox
+    Left = 202
+    Top = 290
+    Width = 90
+    Height = 79
+    Caption = 'Lock Fuse'
+    TabOrder = 41
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxStaticBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_IDName = 'ID_WXSTATICBOX6'
+    Wx_IDValue = 1104
+    Wx_StrechFactor = 0
+  end
+  object chkReadHfuse: TWxCheckBox
+    Left = 110
+    Top = 322
+    Width = 55
+    Height = 17
+    Caption = 'Read'
+    TabOrder = 43
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CHKREADHFUSE'
+    Wx_IDValue = 1112
+    Wx_StrechFactor = 0
+  end
+  object WxStaticText9: TWxStaticText
+    Left = 129
+    Top = 344
+    Width = 15
+    Height = 17
+    Caption = '0x'
+    TabOrder = 44
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxStaticText'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_WXSTATICTEXT9'
+    Wx_IDValue = 1113
+    Wx_LabelStyle = []
+    Wx_StrechFactor = 0
+  end
+  object edtHfuse: TWxEdit
+    Left = 144
+    Top = 341
+    Width = 21
+    Height = 21
+    TabOrder = 45
+    Text = '00'
+    EVT_TEXT = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxTextCtrl'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_EditStyle = []
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_EDTHFUSE'
+    Wx_IDValue = 1114
+    Wx_StrechFactor = 0
+  end
+  object chkWriteHfuse: TWxCheckBox
+    Left = 110
+    Top = 306
+    Width = 55
+    Height = 17
+    Caption = 'Write'
+    TabOrder = 42
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CHKWRITEHFUSE'
+    Wx_IDValue = 1111
+    Wx_StrechFactor = 0
+  end
+  object chkReadLockfuse: TWxCheckBox
+    Left = 209
+    Top = 323
+    Width = 55
+    Height = 17
+    Caption = 'Read'
+    TabOrder = 47
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CHKREADLOCKFUSE'
+    Wx_IDValue = 1122
+    Wx_StrechFactor = 0
+  end
+  object WxStaticText10: TWxStaticText
+    Left = 228
+    Top = 344
+    Width = 15
+    Height = 17
+    Caption = '0x'
+    TabOrder = 48
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxStaticText'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_WXSTATICTEXT10'
+    Wx_IDValue = 1123
+    Wx_LabelStyle = []
+    Wx_StrechFactor = 0
+  end
+  object edtLockfuse: TWxEdit
+    Left = 243
+    Top = 341
+    Width = 21
+    Height = 21
+    TabOrder = 49
+    Text = '00'
+    EVT_TEXT = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxTextCtrl'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_EditStyle = []
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_EDTLOCKFUSE'
+    Wx_IDValue = 1124
+    Wx_StrechFactor = 0
+  end
+  object chkWriteLockfuse: TWxCheckBox
+    Left = 209
+    Top = 307
+    Width = 55
+    Height = 17
+    Caption = 'Write'
+    TabOrder = 46
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CHKWRITELOCKFUSE'
+    Wx_IDValue = 1121
+    Wx_StrechFactor = 0
+  end
+  object chkReadEfuse: TWxCheckBox
+    Left = 308
+    Top = 323
+    Width = 55
+    Height = 17
+    Caption = 'Read'
+    TabOrder = 51
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CHKREADEFUSE'
+    Wx_IDValue = 1132
+    Wx_StrechFactor = 0
+  end
+  object WxStaticText11: TWxStaticText
+    Left = 327
+    Top = 344
+    Width = 15
+    Height = 17
+    Caption = '0x'
+    TabOrder = 52
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxStaticText'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_WXSTATICTEXT11'
+    Wx_IDValue = 1133
+    Wx_LabelStyle = []
+    Wx_StrechFactor = 0
+  end
+  object edtEfuse: TWxEdit
+    Left = 342
+    Top = 341
+    Width = 21
+    Height = 21
+    TabOrder = 53
+    Text = '00'
+    EVT_TEXT = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxTextCtrl'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_EditStyle = []
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_EDTEFUSE'
+    Wx_IDValue = 1134
+    Wx_StrechFactor = 0
+  end
+  object chkWriteEfuse: TWxCheckBox
+    Left = 308
+    Top = 307
+    Width = 55
+    Height = 17
+    Caption = 'Write'
+    TabOrder = 50
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CHKWRITEEFUSE'
+    Wx_IDValue = 1131
+    Wx_StrechFactor = 0
+  end
+  object chkReadCalibration: TWxCheckBox
+    Left = 406
+    Top = 323
+    Width = 55
+    Height = 17
+    Caption = 'Read'
+    TabOrder = 55
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CHKREADCALIBRATION'
+    Wx_IDValue = 1142
+    Wx_StrechFactor = 0
+  end
+  object WxStaticText12: TWxStaticText
+    Left = 410
+    Top = 344
+    Width = 15
+    Height = 17
+    Caption = '0x'
+    TabOrder = 56
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxStaticText'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_WXSTATICTEXT12'
+    Wx_IDValue = 1143
+    Wx_LabelStyle = []
+    Wx_StrechFactor = 0
+  end
+  object edtCalibration: TWxEdit
+    Left = 425
+    Top = 341
+    Width = 56
+    Height = 21
+    TabOrder = 57
+    Text = '00000000'
+    EVT_TEXT = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxTextCtrl'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_EditStyle = []
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_EDTCALIBRATION'
+    Wx_IDValue = 1144
+    Wx_StrechFactor = 0
+  end
+  object chkWriteCalibration: TWxCheckBox
+    Left = 406
+    Top = 307
+    Width = 55
+    Height = 17
+    Caption = 'Write'
+    TabOrder = 54
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CHKWRITECALIBRATION'
+    Wx_IDValue = 1141
+    Wx_StrechFactor = 0
+  end
+  object chkReadSignature: TWxCheckBox
+    Left = 504
+    Top = 323
+    Width = 55
+    Height = 17
+    Caption = 'Read'
+    TabOrder = 59
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CHKREADSIGNATURE'
+    Wx_IDValue = 1152
+    Wx_StrechFactor = 0
+  end
+  object WxStaticText13: TWxStaticText
+    Left = 514
+    Top = 344
+    Width = 15
+    Height = 17
+    Caption = '0x'
+    TabOrder = 60
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxStaticText'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_WXSTATICTEXT13'
+    Wx_IDValue = 1153
+    Wx_LabelStyle = []
+    Wx_StrechFactor = 0
+  end
+  object edtSignature: TWxEdit
+    Left = 529
+    Top = 341
+    Width = 44
+    Height = 21
+    TabOrder = 61
+    Text = '000000'
+    EVT_TEXT = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxTextCtrl'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_EditStyle = []
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_EDTSIGNATURE'
+    Wx_IDValue = 1154
+    Wx_StrechFactor = 0
+  end
+  object chkWriteSignature: TWxCheckBox
+    Left = 504
+    Top = 307
+    Width = 55
+    Height = 17
+    Caption = 'Write'
+    TabOrder = 58
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CHKWRITESIGNATURE'
+    Wx_IDValue = 1151
+    Wx_StrechFactor = 0
+  end
+  object WxStaticBox10: TWxStaticBox
+    Left = 4
+    Top = 375
+    Width = 387
+    Height = 118
+    Caption = 'Options'
+    TabOrder = 62
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxStaticBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_IDName = 'ID_WXSTATICBOX10'
+    Wx_IDValue = 1155
+    Wx_StrechFactor = 0
+  end
+  object WxStaticBox11: TWxStaticBox
+    Left = 400
+    Top = 375
+    Width = 188
+    Height = 56
+    Caption = '-E Exitmode'
+    TabOrder = 63
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxStaticBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_IDName = 'ID_WXSTATICBOX11'
+    Wx_IDValue = 1156
+    Wx_StrechFactor = 0
+  end
+  object WxStaticBox12: TWxStaticBox
+    Left = 400
+    Top = 437
+    Width = 188
+    Height = 56
+    Caption = 'Cycle counter'
+    TabOrder = 64
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxStaticBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_IDName = 'ID_WXSTATICBOX12'
+    Wx_IDValue = 1157
+    Wx_StrechFactor = 0
+  end
+  object chkOptChipErase: TWxCheckBox
+    Left = 12
+    Top = 407
+    Width = 185
+    Height = 17
+    Caption = '-e Perform a chip erase'
+    TabOrder = 66
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CHKOPTCHIPERASE'
+    Wx_IDValue = 1160
+    Wx_StrechFactor = 0
+  end
+  object chkOptAutoErase: TWxCheckBox
+    Left = 12
+    Top = 391
+    Width = 185
+    Height = 17
+    Caption = '-D Disable auto erase for flash'
+    TabOrder = 65
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CHKOPTAUTOERASE'
+    Wx_IDValue = 1159
+    Wx_StrechFactor = 0
+  end
+  object chkOptDontWrite: TWxCheckBox
+    Left = 12
+    Top = 439
+    Width = 185
+    Height = 17
+    Caption = '-n Don'#39't write to the device'
+    TabOrder = 68
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CHKOPTDONTWRITE'
+    Wx_IDValue = 1163
+    Wx_StrechFactor = 0
+  end
+  object chkOptVerifySignature: TWxCheckBox
+    Left = 12
+    Top = 423
+    Width = 185
+    Height = 17
+    Caption = '-F Verify the device signature'
+    TabOrder = 67
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CHKOPTVERIFYSIGNATURE'
+    Wx_IDValue = 1162
+    Wx_StrechFactor = 0
+  end
+  object chkOptTerminal: TWxCheckBox
+    Left = 211
+    Top = 407
+    Width = 175
+    Height = 17
+    Caption = '-t Terminal mode'
+    TabOrder = 70
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CHKOPTTERMINAL'
+    Wx_IDValue = 1171
+    Wx_StrechFactor = 0
+  end
+  object chkOptVerboseOutput: TWxCheckBox
+    Left = 211
+    Top = 423
+    Width = 175
+    Height = 17
+    Caption = '-v Enable verbose output'
+    TabOrder = 71
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CHKOPTVERBOSEOUTPUT'
+    Wx_IDValue = 1172
+    Wx_StrechFactor = 0
+  end
+  object chkOptDisableVerify: TWxCheckBox
+    Left = 211
+    Top = 439
+    Width = 177
+    Height = 17
+    Caption = '-V Disable verify check'
+    TabOrder = 72
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CHKOPTDISABLEVERIFY'
+    Wx_IDValue = 1173
+    Wx_StrechFactor = 0
+  end
+  object chkOptDisableOutput: TWxCheckBox
+    Left = 211
+    Top = 391
+    Width = 176
+    Height = 17
+    Caption = '-q Disable process bar output'
+    TabOrder = 69
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CHKOPTDISABLEOUTPUT'
+    Wx_IDValue = 1170
+    Wx_StrechFactor = 0
+  end
+  object chkExitNoreset: TWxCheckBox
+    Left = 406
+    Top = 407
+    Width = 75
+    Height = 17
+    Caption = 'No reset'
+    TabOrder = 74
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CHKEXITNORESET'
+    Wx_IDValue = 1176
+    Wx_StrechFactor = 0
+  end
+  object chkExitReset: TWxCheckBox
+    Left = 406
+    Top = 391
+    Width = 75
+    Height = 17
+    Caption = 'Reset'
+    TabOrder = 73
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CHKEXITRESET'
+    Wx_IDValue = 1175
+    Wx_StrechFactor = 0
+  end
+  object chkExitNovcc: TWxCheckBox
+    Left = 504
+    Top = 407
+    Width = 74
+    Height = 17
+    Caption = 'No Vcc'
+    TabOrder = 76
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CHKEXITNOVCC'
+    Wx_IDValue = 1179
+    Wx_StrechFactor = 0
+  end
+  object chkExitVcc: TWxCheckBox
+    Left = 504
+    Top = 391
+    Width = 75
+    Height = 17
+    Caption = 'Vcc'
+    TabOrder = 75
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CHKEXITVCC'
+    Wx_IDValue = 1178
+    Wx_StrechFactor = 0
+  end
+  object chkCcSet: TWxCheckBox
+    Left = 406
+    Top = 469
+    Width = 119
+    Height = 17
+    Caption = '-Y Set counter to:'
+    TabOrder = 78
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CHKCCSET'
+    Wx_IDValue = 1187
+    Wx_StrechFactor = 0
+  end
+  object chkCcErase: TWxCheckBox
+    Left = 406
+    Top = 454
+    Width = 126
+    Height = 17
+    Caption = '-y erase cycle counter'
+    TabOrder = 77
+    EVT_CHECKBOX = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CHKCCERASE'
+    Wx_IDValue = 1186
+    Wx_StrechFactor = 0
+  end
+  object edtCycleCounter: TWxEdit
+    Left = 539
+    Top = 467
+    Width = 34
+    Height = 21
+    TabOrder = 79
+    Text = '0'
+    EVT_TEXT = 'ChangeSettings'
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxTextCtrl'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_EditStyle = []
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_EDTCYCLECOUNTER'
+    Wx_IDValue = 1190
+    Wx_StrechFactor = 0
+  end
+  object WxStaticText14: TWxStaticText
+    Left = 12
+    Top = 498
+    Width = 73
+    Height = 17
+    Caption = 'Command line:'
+    TabOrder = 80
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxStaticText'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_WXSTATICTEXT14'
+    Wx_IDValue = 1191
+    Wx_LabelStyle = []
+    Wx_StrechFactor = 0
+  end
+  object WxStaticText15: TWxStaticText
+    Left = 12
+    Top = 542
+    Width = 39
+    Height = 17
+    Caption = 'Output:'
+    TabOrder = 81
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxStaticText'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_WXSTATICTEXT15'
+    Wx_IDValue = 1192
+    Wx_LabelStyle = []
+    Wx_StrechFactor = 0
+  end
+  object btnExecute: TWxButton
+    Left = 499
+    Top = 513
+    Width = 89
+    Height = 23
+    Caption = 'Execute'
+    TabOrder = 82
+    EVT_BUTTON = 'Execute'
+    Wx_BKColor = clBlack
+    Wx_ButtonStyle = []
+    Wx_Class = 'wxButton'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_Default = False
+    Wx_EventList.Strings = (
+      'EVT_BUTTON:OnClick'
+      'EVT_UPDATE_UI:OnUpdateUI')
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_BTNEXECUTE'
+    Wx_IDValue = 1194
+    Wx_StrechFactor = 0
+  end
+  object edtCmdline: TWxEdit
+    Left = 4
+    Top = 515
+    Width = 495
+    Height = 21
+    Color = clBtnFace
+    TabOrder = 83
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxTextCtrl'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_EditStyle = [wxTE_RICH]
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_EDTCMDLINE'
+    Wx_IDValue = 1196
+    Wx_StrechFactor = 0
+    InvisibleBGColorString = 'SYS:wxSYS_COLOUR_BTNFACE'
+  end
+  object chkLptPowerOn: TWxCheckBox
+    Left = 365
+    Top = 113
+    Width = 100
+    Height = 23
+    Caption = 'LPT Power On'
+    TabOrder = 84
+    EVT_CHECKBOX = 'LptPowerOn'
+    Wx_BGColor = clBlack
+    Wx_CheckBoxStyle = []
+    Wx_Class = 'wxCheckBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_CHKLPTPOWERON'
+    Wx_IDValue = 1197
+    Wx_StrechFactor = 0
+  end
+  object lbxOutput: TWxListBox
+    Left = 4
+    Top = 559
+    Width = 585
+    Height = 121
+    Color = clBtnFace
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ItemHeight = 13
+    ParentFont = False
+    TabOrder = 89
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxListBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_LBXOUTPUT'
+    Wx_IDValue = 1198
+    Wx_ListboxStyle = []
+    Wx_StrechFactor = 0
+    InvisibleBGColorString = 'SYS:wxSYS_COLOUR_BTNFACE'
+  end
+  object btnAbout: TWxButton
+    Left = 569
+    Top = 2
+    Width = 17
+    Height = 18
+    Caption = '?'
+    TabOrder = 90
+    EVT_BUTTON = 'WxbtnAboutClick'
+    Wx_BKColor = clBlack
+    Wx_ButtonStyle = []
+    Wx_Class = 'wxButton'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_Default = False
+    Wx_EventList.Strings = (
+      'EVT_BUTTON:OnClick'
+      'EVT_UPDATE_UI:OnUpdateUI')
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_BTNABOUT'
+    Wx_IDValue = 1199
+    Wx_StrechFactor = 0
+  end
+  object OpenFileDialogFlash: TWxOpenFileDialog
+    Left = 429
+    Top = 166
+    Width = 28
+    Height = 27
+    TabOrder = 87
+    Glyph.Data = {
+      36090000424D3609000000000000360000002800000018000000180000000100
+      2000000000000009000000000000000000000000000000000000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080008080
+      8000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000808000008080008080
+      8000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C000C0C0C000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C000000000000000000000FFFF00C0C0C00000FFFF00C0C0
+      C00000FFFF00C0C0C00000FFFF00C0C0C00000FFFF00C0C0C00000FFFF000000
+      0000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C0000000000000FFFF000000000000FFFF00C0C0C00000FF
+      FF00C0C0C00000FFFF00C0C0C00000FFFF00C0C0C00000FFFF00C0C0C00000FF
+      FF0000000000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C00000000000FFFFFF0000000000C0C0C00000FFFF00C0C0
+      C00000FFFF00C0C0C00000FFFF00C0C0C00000FFFF00C0C0C00000FFFF00C0C0
+      C00000000000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C0000000000000FFFF00FFFFFF0000000000C0C0C00000FF
+      FF00C0C0C00000FFFF00C0C0C00000FFFF00C0C0C00000FFFF00C0C0C00000FF
+      FF00C0C0C00000000000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C00000000000FFFFFF0000FFFF00FFFFFF00000000000000
+      0000000000000000000000000000C0C0C00000FFFF00C0C0C00000FFFF00C0C0
+      C00000FFFF0000000000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C0000000000000FFFF00FFFFFF0000FFFF00FFFFFF0000FF
+      FF00FFFFFF0000FFFF00FFFFFF00000000000000000000000000000000000000
+      000000000000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C00000000000FFFFFF0000FFFF00FFFFFF0000FFFF00FFFF
+      FF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF000000
+      0000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C0000000000000FFFF00FFFFFF0000FFFF00FFFFFF0000FF
+      FF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFFFF000000
+      0000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C00000000000FFFFFF0000FFFF00FFFFFF0000FFFF00FFFF
+      FF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF000000
+      0000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C0000000000000FFFF00FFFFFF0000FFFF00FFFFFF0000FF
+      FF0000000000000000000000000000000000000000000000000000000000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C000C0C0C000000000000000000000000000000000000000
+      0000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000808000008080008080
+      8000FFFFFF0000000000FF000000FF000000FF000000FF000000FF000000FF00
+      0000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF00
+      000000000000FFFFFF0000000000FFFFFF000000000000808000008080008080
+      8000808080008080800080808000808080008080800080808000808080008080
+      8000808080008080800080808000808080008080800080808000808080008080
+      8000808080008080800080808000808080008080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000}
+    Wx_Class = 'wxFileDialog'
+    Wx_Message = 'Choose flash file'
+    Wx_Extensions = 'Flash file (*.hex,*.bin) | *.hex;*.bin'
+    Wx_DialogStyle = []
+  end
+  object OpenFileDialogConfFile: TWxOpenFileDialog
+    Left = 429
+    Top = 56
+    Width = 28
+    Height = 27
+    TabOrder = 86
+    Glyph.Data = {
+      36090000424D3609000000000000360000002800000018000000180000000100
+      2000000000000009000000000000000000000000000000000000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080008080
+      8000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000808000008080008080
+      8000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C000C0C0C000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C000000000000000000000FFFF00C0C0C00000FFFF00C0C0
+      C00000FFFF00C0C0C00000FFFF00C0C0C00000FFFF00C0C0C00000FFFF000000
+      0000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C0000000000000FFFF000000000000FFFF00C0C0C00000FF
+      FF00C0C0C00000FFFF00C0C0C00000FFFF00C0C0C00000FFFF00C0C0C00000FF
+      FF0000000000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C00000000000FFFFFF0000000000C0C0C00000FFFF00C0C0
+      C00000FFFF00C0C0C00000FFFF00C0C0C00000FFFF00C0C0C00000FFFF00C0C0
+      C00000000000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C0000000000000FFFF00FFFFFF0000000000C0C0C00000FF
+      FF00C0C0C00000FFFF00C0C0C00000FFFF00C0C0C00000FFFF00C0C0C00000FF
+      FF00C0C0C00000000000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C00000000000FFFFFF0000FFFF00FFFFFF00000000000000
+      0000000000000000000000000000C0C0C00000FFFF00C0C0C00000FFFF00C0C0
+      C00000FFFF0000000000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C0000000000000FFFF00FFFFFF0000FFFF00FFFFFF0000FF
+      FF00FFFFFF0000FFFF00FFFFFF00000000000000000000000000000000000000
+      000000000000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C00000000000FFFFFF0000FFFF00FFFFFF0000FFFF00FFFF
+      FF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF000000
+      0000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C0000000000000FFFF00FFFFFF0000FFFF00FFFFFF0000FF
+      FF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFFFF000000
+      0000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C00000000000FFFFFF0000FFFF00FFFFFF0000FFFF00FFFF
+      FF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF000000
+      0000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C0000000000000FFFF00FFFFFF0000FFFF00FFFFFF0000FF
+      FF0000000000000000000000000000000000000000000000000000000000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C000C0C0C000000000000000000000000000000000000000
+      0000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000808000008080008080
+      8000FFFFFF0000000000FF000000FF000000FF000000FF000000FF000000FF00
+      0000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF00
+      000000000000FFFFFF0000000000FFFFFF000000000000808000008080008080
+      8000808080008080800080808000808080008080800080808000808080008080
+      8000808080008080800080808000808080008080800080808000808080008080
+      8000808080008080800080808000808080008080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000}
+    Wx_Class = 'wxFileDialog'
+    Wx_Message = 'Choose location of configuration file'
+    Wx_Extensions = 'avrdude conf file (*.*) | *.*'
+    Wx_DialogStyle = []
+  end
+  object OpenFileDialogAvrdude: TWxOpenFileDialog
+    Left = 427
+    Top = 8
+    Width = 28
+    Height = 27
+    TabOrder = 85
+    Glyph.Data = {
+      36090000424D3609000000000000360000002800000018000000180000000100
+      2000000000000009000000000000000000000000000000000000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080008080
+      8000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000808000008080008080
+      8000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C000C0C0C000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C000000000000000000000FFFF00C0C0C00000FFFF00C0C0
+      C00000FFFF00C0C0C00000FFFF00C0C0C00000FFFF00C0C0C00000FFFF000000
+      0000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C0000000000000FFFF000000000000FFFF00C0C0C00000FF
+      FF00C0C0C00000FFFF00C0C0C00000FFFF00C0C0C00000FFFF00C0C0C00000FF
+      FF0000000000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C00000000000FFFFFF0000000000C0C0C00000FFFF00C0C0
+      C00000FFFF00C0C0C00000FFFF00C0C0C00000FFFF00C0C0C00000FFFF00C0C0
+      C00000000000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C0000000000000FFFF00FFFFFF0000000000C0C0C00000FF
+      FF00C0C0C00000FFFF00C0C0C00000FFFF00C0C0C00000FFFF00C0C0C00000FF
+      FF00C0C0C00000000000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C00000000000FFFFFF0000FFFF00FFFFFF00000000000000
+      0000000000000000000000000000C0C0C00000FFFF00C0C0C00000FFFF00C0C0
+      C00000FFFF0000000000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C0000000000000FFFF00FFFFFF0000FFFF00FFFFFF0000FF
+      FF00FFFFFF0000FFFF00FFFFFF00000000000000000000000000000000000000
+      000000000000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C00000000000FFFFFF0000FFFF00FFFFFF0000FFFF00FFFF
+      FF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF000000
+      0000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C0000000000000FFFF00FFFFFF0000FFFF00FFFFFF0000FF
+      FF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFFFF000000
+      0000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C00000000000FFFFFF0000FFFF00FFFFFF0000FFFF00FFFF
+      FF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF000000
+      0000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C0000000000000FFFF00FFFFFF0000FFFF00FFFFFF0000FF
+      FF0000000000000000000000000000000000000000000000000000000000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C000C0C0C000000000000000000000000000000000000000
+      0000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000808000008080008080
+      8000FFFFFF0000000000FF000000FF000000FF000000FF000000FF000000FF00
+      0000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF00
+      000000000000FFFFFF0000000000FFFFFF000000000000808000008080008080
+      8000808080008080800080808000808080008080800080808000808080008080
+      8000808080008080800080808000808080008080800080808000808080008080
+      8000808080008080800080808000808080008080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000}
+    Wx_Class = 'wxFileDialog'
+    Wx_Message = 'Choose location of avrdude'
+    Wx_Extensions = 'avrdude executable (avrdude.*) | avrdude.*'
+    Wx_DefaultFile = 'avrdude'
+    Wx_DialogStyle = []
+  end
+  object OpenFileDialogEeprom: TWxOpenFileDialog
+    Left = 432
+    Top = 240
+    Width = 28
+    Height = 27
+    TabOrder = 88
+    Glyph.Data = {
+      36090000424D3609000000000000360000002800000018000000180000000100
+      2000000000000009000000000000000000000000000000000000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080008080
+      8000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000808000008080008080
+      8000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C000C0C0C000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C000000000000000000000FFFF00C0C0C00000FFFF00C0C0
+      C00000FFFF00C0C0C00000FFFF00C0C0C00000FFFF00C0C0C00000FFFF000000
+      0000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C0000000000000FFFF000000000000FFFF00C0C0C00000FF
+      FF00C0C0C00000FFFF00C0C0C00000FFFF00C0C0C00000FFFF00C0C0C00000FF
+      FF0000000000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C00000000000FFFFFF0000000000C0C0C00000FFFF00C0C0
+      C00000FFFF00C0C0C00000FFFF00C0C0C00000FFFF00C0C0C00000FFFF00C0C0
+      C00000000000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C0000000000000FFFF00FFFFFF0000000000C0C0C00000FF
+      FF00C0C0C00000FFFF00C0C0C00000FFFF00C0C0C00000FFFF00C0C0C00000FF
+      FF00C0C0C00000000000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C00000000000FFFFFF0000FFFF00FFFFFF00000000000000
+      0000000000000000000000000000C0C0C00000FFFF00C0C0C00000FFFF00C0C0
+      C00000FFFF0000000000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C0000000000000FFFF00FFFFFF0000FFFF00FFFFFF0000FF
+      FF00FFFFFF0000FFFF00FFFFFF00000000000000000000000000000000000000
+      000000000000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C00000000000FFFFFF0000FFFF00FFFFFF0000FFFF00FFFF
+      FF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF000000
+      0000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C0000000000000FFFF00FFFFFF0000FFFF00FFFFFF0000FF
+      FF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFFFF000000
+      0000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C00000000000FFFFFF0000FFFF00FFFFFF0000FFFF00FFFF
+      FF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF000000
+      0000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C0000000000000FFFF00FFFFFF0000FFFF00FFFFFF0000FF
+      FF0000000000000000000000000000000000000000000000000000000000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C000C0C0C000000000000000000000000000000000000000
+      0000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C0000000000000808000008080008080
+      8000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000808000008080008080
+      8000FFFFFF0000000000FF000000FF000000FF000000FF000000FF000000FF00
+      0000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF00
+      000000000000FFFFFF0000000000FFFFFF000000000000808000008080008080
+      8000808080008080800080808000808080008080800080808000808080008080
+      8000808080008080800080808000808080008080800080808000808080008080
+      8000808080008080800080808000808080008080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000008080000080800000808000}
+    Wx_Class = 'wxFileDialog'
+    Wx_Message = 'Choose EEPROM file'
+    Wx_Extensions = 'Eeprom file (*.hex,*.bin) | *.hex;*.bin'
+    Wx_DialogStyle = []
+  end
+end
