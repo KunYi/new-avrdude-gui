@@ -1,0 +1,1 @@
+Base on http://sourceforge.net/projects/avrdude-gui/ to add new device & programmer support
